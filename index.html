@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teoria Comportamental da Administração</title>
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts: Poppins -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background-color: #0c143d; /* Azul escuro profundo */
+        }
+        .hero-bg {
+            background-color: #0c143d;
+            background-image: 
+                radial-gradient(circle at 15% 50%, rgba(250, 204, 21, 0.1), transparent 40%),
+                radial-gradient(circle at 85% 30%, rgba(59, 130, 246, 0.15), transparent 40%);
+        }
+        .glass-card {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        .text-glow {
+            text-shadow: 0 0 8px rgba(250, 204, 21, 0.7);
+        }
+        .section-title {
+            position: relative;
+            padding-bottom: 1rem;
+            margin-bottom: 2rem;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background-color: #FACC15; /* Amarelo */
+            border-radius: 2px;
+        }
+        .tab-button {
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        .tab-button.active {
+            background-color: #FACC15;
+            color: #1E3A8A; /* Azul escuro */
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(250, 204, 21, 0.3);
+        }
+        /* Animação de fade-in */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-gray-200">
+
+    <!-- Header -->
+    <header id="header" class="bg-transparent fixed w-full top-0 z-50 transition-all duration-300">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-yellow-400">Comportamento<span class="text-white">.ADM</span></a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#inicio" class="hover:text-yellow-400 transition-colors">Início</a>
+                <a href="#contexto" class="hover:text-yellow-400 transition-colors">Contexto</a>
+                <a href="#teoricos" class="hover:text-yellow-400 transition-colors">Teóricos</a>
+                <a href="#aplicacoes" class="hover:text-yellow-400 transition-colors">Aplicações</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden bg-blue-900/90">
+            <a href="#inicio" class="block py-2 px-6 hover:bg-blue-800">Início</a>
+            <a href="#contexto" class="block py-2 px-6 hover:bg-blue-800">Contexto</a>
+            <a href="#teoricos" class="block py-2 px-6 hover:bg-blue-800">Teóricos</a>
+            <a href="#aplicacoes" class="block py-2 px-6 hover:bg-blue-800">Aplicações</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Seção Hero -->
+        <section id="inicio" class="min-h-screen flex items-center justify-center hero-bg pt-20">
+            <div class="container mx-auto px-6 text-center">
+                <h1 class="text-4xl md:text-6xl font-black text-white leading-tight mb-4">
+                    A Revolução Humana na <span class="text-yellow-400 text-glow">Administração</span>
+                </h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Descubra como a Teoria Comportamental mudou o foco da gestão de processos para pessoas, valorizando motivações, decisões e o bem-estar no ambiente de trabalho.
+                </p>
+                <a href="#contexto" class="bg-yellow-400 text-blue-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-500 transform hover:scale-105 transition-all duration-300 shadow-lg shadow-yellow-500/20">
+                    Explore a Teoria
+                </a>
+                <div class="mt-16">
+                    <!-- Imagem do diagrama com caminho relativo -->
+                    <img src="diagrama.png" alt="Diagrama mostrando a evolução das teorias administrativas" class="mx-auto rounded-xl shadow-2xl border-2 border-blue-800 max-w-4xl w-full">
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Contexto Histórico -->
+        <section id="contexto" class="py-20 bg-blue-900 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white">Origens e Fundamentos</h2>
+                <div class="grid md:grid-cols-2 gap-12 items-center">
+                    <div class="space-y-6">
+                        <p class="text-lg leading-relaxed">
+                            A Teoria Comportamental, ou Behaviorista, surgiu a partir de 1947 como uma forte oposição à Teoria Clássica e uma evolução da Teoria das Relações Humanas. Enquanto as abordagens anteriores eram excessivamente focadas na estrutura ou no indivíduo "social", a Teoria Comportamental trouxe a psicologia organizacional para o centro do debate.
+                        </p>
+                        <div class="glass-card p-6 rounded-xl">
+                            <h3 class="text-xl font-bold text-yellow-400 mb-2">A Crítica de Herbert Simon</h3>
+                            <p>
+                                O marco inicial foi a crítica de <span class="font-semibold text-white">Herbert Simon</span> ao "Homem Econômico". Ele introduziu o conceito de <span class="font-semibold text-yellow-300">Racionalidade Limitada</span>, argumentando que as pessoas tomam decisões "satisfatórias" em vez de "ótimas", pois não possuem todas as informações e têm capacidades cognitivas limitadas. Isso mudou tudo.
+                            </p>
+                        </div>
+                    </div>
+                    <div>
+                        <!-- Imagem de Herbert Simon com caminho relativo -->
+                        <img src="simon.jpg" alt="Foto de Herbert Simon" class="rounded-xl shadow-2xl transform hover:scale-105 transition-transform duration-500 mx-auto max-w-sm w-full">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Teóricos -->
+        <section id="teoricos" class="py-20 hero-bg fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white">Grandes Mentes, Grandes Ideias</h2>
+                
+                <div class="flex justify-center space-x-2 md:space-x-4 mb-12">
+                    <button class="tab-button active" data-tab="maslow">Maslow</button>
+                    <button class="tab-button" data-tab="herzberg">Herzberg</button>
+                    <button class="tab-button" data-tab="mcgregor">McGregor</button>
+                </div>
+
+                <div id="tab-content">
+                    <!-- Maslow -->
+                    <div id="maslow" class="tab-pane active">
+                        <div class="grid md:grid-cols-2 gap-12 items-center">
+                            <div>
+                                <div class="flex flex-col md:flex-row items-center text-center md:text-left gap-6 mb-6">
+                                    <!-- Imagem de Abraham Maslow com caminho relativo -->
+                                    <img src="Abraham_Maslow.jpg" alt="Foto de Abraham Maslow" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-yellow-400/50 flex-shrink-0">
+                                    <div>
+                                        <h3 class="text-3xl font-bold text-yellow-400">Abraham Maslow</h3>
+                                        <p class="text-xl font-light">A Hierarquia das Necessidades</p>
+                                    </div>
+                                </div>
+                                <p>Maslow propôs que a motivação humana é baseada na busca pela satisfação de uma hierarquia de necessidades. Uma necessidade superior só se manifesta quando a anterior está razoavelmente satisfeita. Para as empresas, isso significa que um bom salário (base) não é suficiente para motivar a longo prazo se não houver reconhecimento e oportunidades de crescimento (topo).</p>
+                            </div>
+                            <div>
+                                <!-- SVG da Pirâmide de Maslow CORRIGIDO -->
+                                <svg id="maslow-pyramid" viewBox="0 0 200 150" class="w-full max-w-md mx-auto">
+                                    <defs>
+                                        <filter id="glow">
+                                            <feGaussianBlur stdDeviation="2" result="coloredBlur"></feGaussianBlur>
+                                            <feMerge>
+                                                <feMergeNode in="coloredBlur"></feMergeNode>
+                                                <feMergeNode in="SourceGraphic"></feMergeNode>
+                                            </feMerge>
+                                        </filter>
+                                    </defs>
+                                    <!-- Nível 1: Autorrealização -->
+                                    <g class="pyramid-level" data-info="Autorrealização: Desenvolvimento pessoal, criatividade, superação de desafios.">
+                                        <polygon points="100,5 116,33 84,33" fill="#FACC15" />
+                                        <text x="100" y="23" font-size="6" fill="#1E3A8A" text-anchor="middle" font-weight="bold">Autorrealização</text>
+                                    </g>
+                                    <!-- Nível 2: Estima -->
+                                    <g class="pyramid-level" data-info="Estima: Reconhecimento, status, respeito dos outros, autoconfiança.">
+                                        <polygon points="84,33 116,33 132,61 68,61" fill="#FBBF24" />
+                                        <text x="100" y="50" font-size="7" fill="#1E3A8A" text-anchor="middle" font-weight="bold">Estima</text>
+                                    </g>
+                                    <!-- Nível 3: Sociais -->
+                                    <g class="pyramid-level" data-info="Sociais: Amizade, pertencimento a um grupo, relacionamentos, amor.">
+                                        <polygon points="68,61 132,61 148,89 52,89" fill="#F59E0B" />
+                                        <text x="100" y="78" font-size="7" fill="#1E3A8A" text-anchor="middle" font-weight="bold">Sociais</text>
+                                    </g>
+                                    <!-- Nível 4: Segurança -->
+                                    <g class="pyramid-level" data-info="Segurança: Proteção, estabilidade no emprego, saúde, recursos financeiros.">
+                                        <polygon points="52,89 148,89 164,117 36,117" fill="#D97706" />
+                                        <text x="100" y="106" font-size="7" fill="#1E3A8A" text-anchor="middle" font-weight="bold">Segurança</text>
+                                    </g>
+                                    <!-- Nível 5: Fisiológicas -->
+                                    <g class="pyramid-level" data-info="Fisiológicas: Comida, água, sono, abrigo, necessidades básicas do corpo.">
+                                        <polygon points="36,117 164,117 180,145 20,145" fill="#B45309"/>
+                                        <text x="100" y="134" font-size="7" fill="white" text-anchor="middle" font-weight="bold">Fisiológicas</text>
+                                    </g>
+                                </svg>
+                                <div id="pyramid-tooltip" class="text-center mt-2 font-semibold text-white">Passe o mouse sobre um nível da pirâmide</div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Herzberg -->
+                    <div id="herzberg" class="tab-pane hidden">
+                        <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-6 mb-10">
+                             <!-- Imagem de Frederick Herzberg com caminho relativo -->
+                             <img src="hezberg.jpg" alt="Foto de Frederick Herzberg" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-yellow-400/50 flex-shrink-0">
+                             <div>
+                                <h3 class="text-3xl font-bold text-yellow-400">Frederick Herzberg</h3>
+                                <p class="text-xl font-light">A Teoria dos Dois Fatores</p>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="glass-card p-8 rounded-xl border-red-500/50 border-2"><h4 class="text-2xl font-bold text-red-400 mb-4 text-center">Fatores Higiênicos (Evitam Insatisfação)</h4><p class="text-center mb-6">Relacionados ao contexto. Sua ausência gera insatisfação, mas sua presença não motiva.</p><ul class="space-y-3"><li class="flex items-center"><span class="text-red-400 mr-3">●</span> Salário e benefícios</li><li class="flex items-center"><span class="text-red-400 mr-3">●</span> Condições de trabalho</li><li class="flex items-center"><span class="text-red-400 mr-3">●</span> Relações interpessoais</li><li class="flex items-center"><span class="text-red-400 mr-3">●</span> Políticas da empresa</li></ul></div>
+                            <div class="glass-card p-8 rounded-xl border-green-500/50 border-2"><h4 class="text-2xl font-bold text-green-400 mb-4 text-center">Fatores Motivacionais (Geram Satisfação)</h4><p class="text-center mb-6">Relacionados ao conteúdo do cargo. São estes que realmente elevam a satisfação.</p><ul class="space-y-3"><li class="flex items-center"><span class="text-green-400 mr-3">●</span> Conteúdo do trabalho</li><li class="flex items-center"><span class="text-green-400 mr-3">●</span> Responsabilidade</li><li class="flex items-center"><span class="text-green-400 mr-3">●</span> Crescimento e reconhecimento</li><li class="flex items-center"><span class="text-green-400 mr-3">●</span> Realização pessoal</li></ul></div>
+                        </div>
+                    </div>
+                    <!-- McGregor -->
+                    <div id="mcgregor" class="tab-pane hidden">
+                        <div class="flex flex-col md:flex-row items-center justify-center text-center md:text-left gap-6 mb-10">
+                             <!-- Imagem de Douglas McGregor com caminho relativo -->
+                             <img src="Douglas-McGregor-Theory-X-Theory-Y-216x300.jpg" alt="Foto de Douglas McGregor" class="w-32 h-32 rounded-full object-cover shadow-lg border-4 border-yellow-400/50 flex-shrink-0">
+                             <div>
+                                <h3 class="text-3xl font-bold text-yellow-400">Douglas McGregor</h3>
+                                <p class="text-xl font-light">Teorias X e Y: Duas Visões do Ser Humano</p>
+                            </div>
+                        </div>
+                        <div class="grid md:grid-cols-2 gap-8">
+                            <div class="glass-card p-8 rounded-xl transform hover:-translate-y-2 transition-transform duration-300"><h4 class="text-4xl font-black text-white mb-4 text-center">X</h4><p class="text-lg font-bold text-yellow-400 mb-4 text-center">A Visão Tradicional e Pessimista</p><ul class="space-y-3 list-disc list-inside"><li>As pessoas são preguiçosas e evitam o trabalho.</li><li>Precisam ser controladas, dirigidas e ameaçadas.</li><li>Buscam apenas segurança e não têm ambição.</li><li>Estilo de gestão: Autocrático e centralizador.</li></ul></div>
+                            <div class="glass-card p-8 rounded-xl transform hover:-translate-y-2 transition-transform duration-300"><h4 class="text-4xl font-black text-white mb-4 text-center">Y</h4><p class="text-lg font-bold text-yellow-400 mb-4 text-center">A Visão Moderna e Otimista</p<ul class="space-y-3 list-disc list-inside"><li>O trabalho é tão natural quanto o lazer.</li><li>As pessoas buscam e aceitam responsabilidades.</li><li>São criativas e competentes para solucionar problemas.</li><li>Estilo de gestão: Democrático e participativo.</li></ul></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Aplicações Práticas -->
+        <section id="aplicacoes" class="py-20 bg-blue-900 fade-in-section">
+            <div class="container mx-auto px-6">
+                <h2 class="section-title text-3xl md:text-4xl font-bold text-center text-white">A Teoria na Prática</h2>
+                <p class="text-center text-lg max-w-3xl mx-auto mb-12">
+                    Os conceitos da Teoria Comportamental não são apenas acadêmicos. Eles moldaram as práticas de gestão de pessoas que vemos hoje nas empresas mais bem-sucedidas.
+                </p>
+                <div class="grid md:grid-cols-3 gap-8">
+                    <div class="glass-card p-6 rounded-xl text-center"><img src="https://placehold.co/100x100/FACC15/1E3A8A?text=Liderança" alt="Ícone de liderança" class="mx-auto mb-4 rounded-full"><h3 class="text-xl font-bold text-yellow-400 mb-2">Liderança Humanizada</h3><p>Gestores são treinados para serem mentores, apoiando o desenvolvimento da equipe, delegando com confiança e promovendo a autonomia (Teoria Y).</p></div>
+                    <div class="glass-card p-6 rounded-xl text-center"><img src="https://placehold.co/100x100/FACC15/1E3A8A?text=Motivação" alt="Ícone de motivação" class="mx-auto mb-4 rounded-full"><h3 class="text-xl font-bold text-yellow-400 mb-2">Enriquecimento de Cargos</h3><p>As tarefas são desenhadas para serem mais desafiadoras e significativas, aumentando a responsabilidade e o reconhecimento (Herzberg).</p></div>
+                    <div class="glass-card p-6 rounded-xl text-center"><img src="https://placehold.co/100x100/FACC15/1E3A8A?text=Clima" alt="Ícone de clima organizacional" class="mx-auto mb-4 rounded-full"><h3 class="text-xl font-bold text-yellow-400 mb-2">Cultura e Clima Organizacional</h3><p>Foco na criação de ambientes seguros, com comunicação aberta, trabalho em equipe e reconhecimento das necessidades sociais e de estima (Maslow).</p></div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Seção Conclusão -->
+        <section id="conclusao" class="py-20 hero-bg fade-in-section">
+            <div class="container mx-auto px-6 text-center">
+                 <img src="adm.png" alt="Ícone simbolizando o capital humano" class="mx-auto mb-6 opacity-80">
+                 <h2 class="text-3xl md:text-4xl font-bold text-white">O Capital Humano como Ativo Estratégico</h2>
+                 <p class="text-lg text-gray-300 max-w-4xl mx-auto mt-6">
+                     Em resumo, a Teoria Comportamental foi um divisor de águas. Ela provou que entender o comportamento humano não é "soft skill", mas uma competência de gestão essencial. Empresas que investem em seus colaboradores são as que prosperam, inovam e retêm os melhores talentos.
+                 </p>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-blue-900 py-6">
+        <div class="container mx-auto px-6 text-center text-gray-400">
+            <p>&copy; 2025 Teoria Comportamental da Administração. Site desenvolvido com base no material de Adrielle, Guilherme, Hingrid, Mateus, Raíssa e Solana.</p>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => { mobileMenu.classList.toggle('hidden'); });
+            const mobileLinks = mobileMenu.querySelectorAll('a');
+            mobileLinks.forEach(link => { link.addEventListener('click', () => { mobileMenu.classList.add('hidden'); }); });
+            
+            // Header scroll effect
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('bg-blue-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                    header.classList.remove('bg-transparent');
+                } else {
+                    header.classList.remove('bg-blue-900/80', 'backdrop-blur-sm', 'shadow-lg');
+                    header.classList.add('bg-transparent');
+                }
+            });
+
+            // Tabs for Theorists
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const tabPanes = document.querySelectorAll('.tab-pane');
+            tabButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const tabId = button.getAttribute('data-tab');
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    button.classList.add('active');
+                    tabPanes.forEach(pane => {
+                        pane.style.display = pane.id === tabId ? 'block' : 'none';
+                    });
+                });
+            });
+            // Initialize tab display
+            tabPanes.forEach(pane => {
+                if (!pane.classList.contains('active')) {
+                    pane.style.display = 'none';
+                }
+            });
+            
+            // Maslow Pyramid Interaction
+            const pyramidLevels = document.querySelectorAll('.pyramid-level');
+            const tooltip = document.getElementById('pyramid-tooltip');
+            pyramidLevels.forEach(level => {
+                level.addEventListener('mouseenter', () => {
+                    tooltip.textContent = level.getAttribute('data-info');
+                    level.style.filter = 'url(#glow)';
+                    level.style.cursor = 'pointer';
+                    level.style.transition = 'filter 0.3s ease';
+                });
+                level.addEventListener('mouseleave', () => {
+                    tooltip.textContent = 'Passe o mouse sobre um nível da pirâmide';
+                    level.style.filter = 'none';
+                });
+            });
+
+            // Fade-in animation on scroll
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+            sections.forEach(section => { observer.observe(section); });
+        });
+    </script>
+
+</body>
+</html>
